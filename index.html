@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lesson 2</title>
+</head>
+<body>
+    <h1>Lesson 2</h1>
+    <script>
+        let age = 0;
+        function getInfo(n) {
+            setTimeout(function() {
+                console.log(n);
+                age = 12;
+            }, 0)
+        }
+        const setName = function(name, cb) {
+            cb(name);
+        }
+        setName("Leksa", getInfo)
+        setTimeout(function() {
+            console.log(age);
+        }, 10);
+
+        /*
+            GET (получить):
+                - картинку
+                - файл
+                - данные из БД
+
+            POST (отправить)
+                - логин/пароль
+                - товар в корзину
+                - платеж для покупки заказа
+            DELETE (удалить)
+            PUT (изменить данные)
+                работает как и пост, но нацелен на восприятие, что данные именно изменяются
+            PATCH (изменить данные)
+
+            let user = {
+                name: "Leksa",
+                age: 10
+            }
+
+            PUT http://site.ru/changeuser?age=11
+                user = {...user, age: newAge}
+
+            PATCH http://site.ru/changeuser?age=11
+                user.age = newAge
+            
+        */
+        let user = {
+            name: "Leksa",
+            age: 10
+        }
+        let person = {...user};
+
+        user.name = "Igor";
+        console.log(user.name);
+        console.log(person.name);
+
+        // Александра = {кот: Байт, возраст: 8мес}
+        // Лекса = Александра
+
+        // Соседка Лексы = {...Александра} - клон
+
+        /*
+            IP - 123.45.67.8
+            API - Application Programm Interfase
+                Способ взаимодействия нескольких сервисов друг с другом
+
+            REST API
+                CRUD
+                    C - create => POST {name: "Book", price: 100}
+                    R - read => GET [{},{},{}]
+                    U - update => POST {price: 120}
+                    D - delete => GET ?name="Book"
+
+            RESTfull API
+                C - create => POST {name: "Book", price: 100}
+                R - read => GET [{},{},{}]
+                U - update => PUT / PATCH {price: 120}
+                D - delete => DELETE ?name="Book"
+        */
+
+        user = {
+            name: 'Leksa',
+            "user age": 10,
+        }
+
+        userJson = {
+            "name": "Leksa",
+            "age": 10
+        }
+
+
+        
+
+
+    </script>
+</body>
+</html>
